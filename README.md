@@ -10,6 +10,18 @@ Security: Includes custom error handling and access control using modifiers.
 Tests: Contains unit tests for core functionality using Mocha and Chai.
 Project Structure
 Contracts:
+FundMe Contract Project
+Overview
+This project is a decentralized funding contract built with Solidity and Hardhat. It allows users to fund the contract in ETH, and only the owner can withdraw the funds. The project integrates Chainlink price feeds to ensure that the minimum funding amount is equivalent to 50 USD.
+
+Features
+Funding Functionality: Users can fund the contract in ETH.
+Price Conversion: Utilizes Chainlink price feeds for ETH to USD conversion.
+Ownership Control: Only the owner can withdraw funds.
+Security: Includes custom error handling and access control using modifiers.
+Tests: Contains unit tests for core functionality using Mocha and Chai.
+Project Structure
+Contracts:
 
 FundMe.sol: The main contract with funding and withdrawal logic.
 PriceConverter.sol: A library to convert ETH to USD using Chainlink price feeds.
@@ -59,8 +71,7 @@ Usage
 bash
 Copy code
 npx hardhat run scripts/fund.js --network localhost
-npx hardhat run scripts/withdraw.js --network localhost 
-4. Run Tests
+npx hardhat run scripts/withdraw.js --network localhost 4. Run Tests
 bash
 Copy code
 npx hardhat test
@@ -74,3 +85,4 @@ Feel free to connect with me for any questions or feedback!
 ```
 
 ```
+
