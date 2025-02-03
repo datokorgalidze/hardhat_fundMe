@@ -8,8 +8,8 @@ const { developmentChains } = require("../../helper-hardhat-config");
       let fundMe;
       let MockV3Aggregator;
       let deployer;
-      const sendedEth = ethers.utils.parseEther("1");
-
+      const sendedEth = ethers.utils.parseEther("0.1");
+      const DECIMALS = "8";
       beforeEach(async () => {
         deployer = (await getNamedAccounts()).deployer;
         await deployments.fixture(["all"]);
@@ -23,7 +23,15 @@ const { developmentChains } = require("../../helper-hardhat-config");
       describe("constructor", function () {
         it("sets the aggregator addresses correctly", async () => {
           const response = await fundMe.getPriceFeed();
+          console.log("Eth price", response);
           assert.equal(response, MockV3Aggregator.address);
+        });
+
+        it("Prints the current mock price", async () => {
+          const priceData = await MockV3Aggregator.latestRoundData();
+          const price = ethers.utils.formatUnits(priceData.answer, DECIMALS);
+          console.log("Current Price (USD/ETH):", price);
+          assert.equal(price, "2000.0"); // Assuming the price is still 2000 USD/ETH
         });
       });
 
