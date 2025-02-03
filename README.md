@@ -51,15 +51,18 @@ npm install
 Set up environment variables:
 
 Create a .env file and add the following:
+```
 
-bash
+```bash
 Copy
 Edit
 PRIVATE_KEY=your_private_key
 SEPOLIA_RPC_URL=your_sepolia_rpc_url
 Usage
 Compile Contracts
-bash
+```
+
+````bash
 Copy
 Edit
 npx hardhat compile
@@ -71,13 +74,14 @@ npx hardhat deploy --network localhost
 Run Scripts
 Fund the contract:
 
-bash
+```bash
 Copy
 Edit
 npx hardhat run scripts/fund.js --network localhost
 Withdraw the funds:
+````
 
-bash
+```bash
 Copy
 Edit
 npx hardhat run scripts/withdraw.js --network localhost
