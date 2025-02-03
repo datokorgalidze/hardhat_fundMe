@@ -41,59 +41,70 @@ This project is a decentralized funding contract built with Solidity and Hardhat
    ```bash
    git clone https://github.com/datokorgalidze/hardhat_fundMe.git
    cd fundme-project
-   Install dependencies:
    ```
 
+## Installation
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Set up environment variables:
+
+   Create a `.env` file and add the following:
+
+   ```bash
+   PRIVATE_KEY=your_private_key
+   SEPOLIA_RPC_URL=your_sepolia_rpc_url
+   ```
+
+## Usage
+
+### Compile Contracts
+
+To compile the contracts, run:
+
 ```bash
-Copy
-Edit
-npm install
-Set up environment variables:
-
-Create a .env file and add the following:
-```
-
-```bash
-Copy
-Edit
-PRIVATE_KEY=your_private_key
-SEPOLIA_RPC_URL=your_sepolia_rpc_url
-Usage
-Compile Contracts
-```
-
-````bash
-Copy
-Edit
 npx hardhat compile
-Deploy Contracts
-bash
-Copy
-Edit
+```
+
+## Deploy Contracts
+
+To deploy contracts to the localhost, run:
+
+```bash
 npx hardhat deploy --network localhost
-Run Scripts
-Fund the contract:
+```
+
+## Run Scripts
+
+- Fund the contract:
 
 ```bash
-Copy
-Edit
 npx hardhat run scripts/fund.js --network localhost
-Withdraw the funds:
-````
+```
+
+- Withdraw the funds:
 
 ```bash
-Copy
-Edit
 npx hardhat run scripts/withdraw.js --network localhost
-Run Tests
-bash
-Copy
-Edit
+```
+
+## Run Tests
+
+- To run the tests, use:
+
+```bash
 npx hardhat test
-License
+```
+
+## License
+
 This project is licensed under the MIT License.
 
-Author
+## Author
+
 David Korgalidze
 Feel free to connect with me for any questions or feedback!
-```
